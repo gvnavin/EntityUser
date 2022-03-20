@@ -13,7 +13,17 @@ repositories {
 }
 
 dependencies {
+
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.5.10")
+    implementation("com.beust:klaxon:5.5")
+
+    testRuntimeOnly("org.jetbrains.kotlin:kotlin-reflect:1.5.10")
+
     testImplementation(kotlin("test"))
+    testImplementation("org.jetbrains.kotlin:kotlin-reflect:1.5.10")
+    testImplementation("org.assertj:assertj-core:3.22.0")
+
+
 }
 
 tasks.test {

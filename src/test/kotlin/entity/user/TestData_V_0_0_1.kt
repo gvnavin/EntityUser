@@ -1,20 +1,19 @@
 package entity.user
 
-import entity.common.EntityTypes
-import entity.common.ReadableName
+import entity.common.*
 
 object TestData_V_0_0_1 {
 
     const val userInput = """{ 
-        "type" : "${EntityTypes.USER}",
-        "version" : "0.0.1",
-         "entity": {
-            "readableName": { 
-                "type": "text",
-                "name": "Test User" 
+        "${EntityKeys.TYPE}" : "${EntityTypes.USER}",
+        "${EntityKeys.VERSION}" : "0.0.1",
+        "${EntityKeys.ENTITY}": {
+            "${AbstractBaseEntityImpl.HUMAN_FRIENDLY_NAME}": { 
+                "${HumanFriendlyNameImpl.FORMAT}": "${HumanReadableNamesFormats.PLAIN_TEXT}",
+                "${HumanFriendlyNameImpl.TEXT}": "Test User" 
             },
-            "machineName": "testUser001",
-            "id": "shortCompanyName.1.user.5ccff4b4-3330-4f7d-a814-3d383640b58f",
+            "${AbstractBaseEntityImpl.MACHINE_FRIENDLY_NAME}": "testUser001",
+            "${AbstractBaseEntityImpl.ID}": "shortCompanyName.1.user.5ccff4b4-3330-4f7d-a814-3d383640b58f",
             "profile" : "test profile",
             "location" : "test location",
             "qualification" : "test qualification"
@@ -35,19 +34,19 @@ object TestData_V_0_0_1 {
             return "test qualification"
         }
 
-        override fun getReadableName(): ReadableName {
-            return object: ReadableName {
-                override fun getName(): String {
+        override fun getHumanFriendlyName(): HumanFriendlyName {
+            return object: HumanFriendlyName {
+                override fun getText(): String {
                     return "Test User"
                 }
 
-                override fun getType(): String {
-                    return "text"
+                override fun getFormat(): String {
+                    return HumanReadableNamesFormats.PLAIN_TEXT
                 }
             }
         }
 
-        override fun getMachineName(): String {
+        override fun getMachineFriendlyName(): String {
             return "testUser001"
         }
 

@@ -12,7 +12,8 @@ package entity.common
  *
  */
 
-interface ReadableName {
-    fun getName(): String
-    fun getType(): String
+interface HumanFriendlyName {
+
+    fun getText(): String
+    fun getFormat(): String
 }

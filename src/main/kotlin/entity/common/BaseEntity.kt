@@ -14,13 +14,7 @@ package entity.common
 
 interface BaseEntity {
 
-    companion object {
-        const val TYPE = "type"
-        const val VERSION = "version"
-        const val ENTITY = "entity"
-    }
-
-    fun getReadableName(): ReadableName
-    fun getMachineName(): String
+    fun getHumanFriendlyName(): HumanFriendlyName
+    fun getMachineFriendlyName(): String
     fun getId(): String
 }

@@ -2,18 +2,24 @@ package entity.common
 
 import com.beust.klaxon.JsonObject
 
-abstract class AbstractBaseEntityImpl(private val entity: JsonObject) : BaseEntity {
+internal abstract class AbstractBaseEntityImpl(private val entity: JsonObject) : BaseEntity {
 
-    override fun getReadableName(): ReadableName {
-        return ReadableNameImpl(entity.obj("readableName")!!)
+    companion object {
+        const val HUMAN_FRIENDLY_NAME = "humanFriendlyName"
+        const val MACHINE_FRIENDLY_NAME = "machineFriendlyName"
+        const val ID = "id"
     }
 
-    override fun getMachineName(): String {
-        return entity.string("machineName")!!
+    override fun getHumanFriendlyName(): HumanFriendlyName {
+        return HumanFriendlyNameImpl(entity.obj(HUMAN_FRIENDLY_NAME)!!)
+    }
+
+    override fun getMachineFriendlyName(): String {
+        return entity.string(MACHINE_FRIENDLY_NAME)!!
     }
 
     override fun getId(): String {
-        return entity.string("id")!!
+        return entity.string(ID)!!
     }
 
 }

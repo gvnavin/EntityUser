@@ -18,10 +18,10 @@ internal class UserFactoryTest {
 
     private fun assertUtil(expectedUser: User, actualUser: User) {
         assertEquals(expectedUser.getId(), actualUser.getId())
-        assertEquals(expectedUser.getMachineName(), actualUser.getMachineName())
+        assertEquals(expectedUser.getMachineFriendlyName(), actualUser.getMachineFriendlyName())
 
-        assertEquals(expectedUser.getReadableName().getName(), actualUser.getReadableName().getName())
-        assertEquals(expectedUser.getReadableName().getType(), actualUser.getReadableName().getType())
+        assertEquals(expectedUser.getHumanFriendlyName().getText(), actualUser.getHumanFriendlyName().getText())
+        assertEquals(expectedUser.getHumanFriendlyName().getFormat(), actualUser.getHumanFriendlyName().getFormat())
 
         assertEquals(expectedUser.getProfile(), actualUser.getProfile())
     }

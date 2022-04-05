@@ -1,10 +1,10 @@
-package entity.user
+package entity.userprofile
 
 import entity.common.*
 
 object TestData_V_0_1_0 {
 
-    const val userInput = """{ 
+    const val userProfileInput = """{ 
         "${EntityKeys.TYPE}" : "${EntityTypes.USER}",
         "${EntityKeys.VERSION}" : "0.1.0",
         "${EntityKeys.ENTITY}": {
@@ -19,7 +19,7 @@ object TestData_V_0_1_0 {
          }
     }"""
 
-    val userOutput = object: User {
+    val userProfileOutput = object: UserProfile {
 
         override fun getProfile(): String {
             return "test profile"

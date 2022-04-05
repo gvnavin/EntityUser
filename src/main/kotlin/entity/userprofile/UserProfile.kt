@@ -1,8 +1,8 @@
-package entity.user
+package entity.userprofile
 
 import entity.common.BaseEntity
 
-interface User: BaseEntity {
+interface UserProfile: BaseEntity {
 
     /**
      * from v.0.0.0

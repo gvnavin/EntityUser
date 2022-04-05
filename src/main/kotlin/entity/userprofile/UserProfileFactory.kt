@@ -15,8 +15,8 @@ object UserProfileFactory {
         val json = parser.parse(jsonString.byteInputStream()) as JsonObject
 
         val type = json.string(EntityKeys.TYPE)!!
-        if (type != EntityTypes.USER) {
-            throw RuntimeException("unexpected type, UserFactory only supports ${EntityTypes.USER}")
+        if (type != EntityTypes.USER_PROFILE) {
+            throw RuntimeException("unexpected type, UserFactory only supports ${EntityTypes.USER_PROFILE}")
         }
 
         val version = json.string(EntityKeys.VERSION)!!

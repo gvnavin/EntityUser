@@ -5,7 +5,7 @@ import entity.common.*
 object TestData_V_0_0_1 {
 
     const val userProfileInput = """{ 
-        "${EntityKeys.TYPE}" : "${EntityTypes.USER}",
+        "${EntityKeys.TYPE}" : "${EntityTypes.USER_PROFILE}",
         "${EntityKeys.VERSION}" : "0.0.1",
         "${EntityKeys.ENTITY}": {
             "${AbstractBaseEntityImpl.HUMAN_FRIENDLY_NAME}": { 
